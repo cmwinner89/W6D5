@@ -17,7 +17,7 @@ class Cat < ApplicationRecord
 
     include ActionView::Helpers::DateHelper
 
-    validates :name, :birth_date, :color, :sex, :created_at, :updated_at, presence: true
+    validates :name, :birth_date, :color, :sex, presence: true
 
     validates :color, inclusion: {in: %w(black white brown orange grey), message: "That's not a valid color"}
     validates :sex, inclusion: {in: %w(M F), message: "Sex must be M or F"}

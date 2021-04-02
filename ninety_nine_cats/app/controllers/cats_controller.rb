@@ -7,7 +7,14 @@ class CatsController < ApplicationController
   end
 
   def show
-    @cat = Cat.find_by(params[:id])
+    @cat = Cat.find(params[:id])
+
+    render :show
   end
 
+  private
+
+  def cat_params
+    params.require(:cat).permit(:birth_date, :color, :name, :sex, :description)
+  end
 end
